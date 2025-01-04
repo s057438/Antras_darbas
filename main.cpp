@@ -6,6 +6,7 @@
 
 using namespace std;
 
+// Ar raide yra balsis?
 bool balse(char raide) {
     char balses[] = {'a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y'};
     for (int i = 0; i < 12; i++) {
@@ -14,6 +15,16 @@ bool balse(char raide) {
         }
     }
     return false;
+}
+
+// Didziausias bendras daliklis
+int didziausias(int skaicius1, int skaicius2) {
+    if (skaicius2 != 0) {
+        int laik = skaicius2;
+        skaicius2 = skaicius1 % skaicius2;
+        skaicius1 = laik;
+    }
+    return skaicius1;
 }
 
 
@@ -39,6 +50,18 @@ int main() {
             } else {
                 cout << "False" << endl;
             break;
+            case 2:
+                int skaicius1, skaicius2;
+                cout << "Iveskite pirma skaiciu:" << endl;
+                cin >> skaicius1;
+
+                cout << "Iveskite antra skaiciu:" << endl;
+                cin >> skaicius2;
+
+                int daliklis = didziausias(skaicius1, skaicius2 );
+                cout << "Didziausias bendras daliklis tarp skaiciu " << skaicius1 << "ir " << skaicius2 << "yra " << daliklis << endl;
+            break;
+
             default:
                 cout << "Tokio pasirinkimo nera" << endl;
     }
