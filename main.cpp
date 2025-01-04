@@ -27,7 +27,30 @@ int didziausias(int skaicius1, int skaicius2) {
     return skaicius1;
 }
 
+// Zaidimas
+void zaidimas() {
+    srand(time(0));
+    int atsitiktinis = rand() % 100 + 1;
+    int spejimas;
 
+    cout << "Atspekite skaiciu nuo 1 iki 100" << endl;
+
+    while(true) {
+        cout << "Iveskite savo spejima" << endl;
+        cin >> spejimas;
+
+        if (spejimas > atsitiktinis) {
+            cout << "Jusu ivestas skaicius yra per didelis." << endl;
+        }
+        else if (spejimas < atsitiktinis) {
+            cout << "Jusu ivestas skaicius yra per mazas" << endl;
+        }
+        else {
+            cout << "Jus atspejote skaiciu" << endl;
+        }
+    }
+}
+//
 int main() {
 
     int veiksmas = 0;
@@ -61,7 +84,10 @@ int main() {
                 int daliklis = didziausias(skaicius1, skaicius2 );
                 cout << "Didziausias bendras daliklis tarp skaiciu " << skaicius1 << "ir " << skaicius2 << "yra " << daliklis << endl;
             break;
-
+            case 3:
+                zaidimas();
+                break;
+            case 4:
             default:
                 cout << "Tokio pasirinkimo nera" << endl;
     }
