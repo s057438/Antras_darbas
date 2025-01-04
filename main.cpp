@@ -1,7 +1,7 @@
 #include <iostream>
 #include <iomanip>
-#include <cstdlib>
 #include <ctime>
+#include <cstdlib>
 
 
 using namespace std;
@@ -48,13 +48,29 @@ void zaidimas() {
         else {
             cout << "Jus atspejote skaiciu" << endl;
         }
+        break;
     }
 }
-//
+// Fizzbuzz
+void fizzbuzz(int n) {
+    for (int i = 1; i <= n; i++) {
+        if (i % 3 == 0 && i % 5 == 0) {
+            cout << "FizzBuzz" << endl;
+        } else if (i % 3 == 0) {
+            cout << "Fizz" << endl;
+        } else if (i % 5 == 0) {
+            cout << "Buzz" << endl;
+        }
+        else {
+            cout << i << endl;
+        }
+    }
+}
+
 int main() {
 
     int veiksmas = 0;
-    while (veiksmas != 6) {
+    while (veiksmas != 5) {
         cout << "Pasirinkite koki veiksma norite atlikti:" << endl;
         cout << "1. Patikrinti ar ivesta raide yra balse" << endl;
         cout << "2. Rasti dvieju skaiciu didziausia bendra dalikli" << endl;
@@ -72,7 +88,8 @@ int main() {
                 cout << "True" << endl;
             } else {
                 cout << "False" << endl;
-            break;
+            }
+                break;
             case 2:
                 int skaicius1, skaicius2;
                 cout << "Iveskite pirma skaiciu:" << endl;
@@ -83,11 +100,21 @@ int main() {
 
                 int daliklis = didziausias(skaicius1, skaicius2 );
                 cout << "Didziausias bendras daliklis tarp skaiciu " << skaicius1 << "ir " << skaicius2 << "yra " << daliklis << endl;
-            break;
+                break;
             case 3:
                 zaidimas();
                 break;
             case 4:
+                int n;
+                cout << "Iveskite teigiama sveikaji skaiciu" << endl;
+                cin >> n;
+
+                if (n>0) {
+                    fizzbuzz(n);
+                } else {
+                    cout << "Iveskite teigiama sveikaji skaiciu" << endl;
+                }
+                break;
             default:
                 cout << "Tokio pasirinkimo nera" << endl;
     }
