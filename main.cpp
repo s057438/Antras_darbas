@@ -68,7 +68,6 @@ void fizzbuzz(int n) {
 }
 
 int main() {
-
     int veiksmas = 0;
     while (veiksmas != 5) {
         cout << "Pasirinkite koki veiksma norite atlikti:" << endl;
@@ -89,34 +88,35 @@ int main() {
             } else {
                 cout << "False" << endl;
             }
-                break;
+            break;
             case 2:
                 int skaicius1, skaicius2;
-                cout << "Iveskite pirma skaiciu:" << endl;
-                cin >> skaicius1;
+            cout << "Iveskite pirma skaiciu:" << endl;
+            cin >> skaicius1;
 
-                cout << "Iveskite antra skaiciu:" << endl;
-                cin >> skaicius2;
+            cout << "Iveskite antra skaiciu:" << endl;
+            cin >> skaicius2;
 
-                int daliklis = didziausias(skaicius1, skaicius2 );
-                cout << "Didziausias bendras daliklis tarp skaiciu " << skaicius1 << "ir " << skaicius2 << "yra " << daliklis << endl;
-                break;
+            int daliklis = didziausias(skaicius1, skaicius2 );
+            cout << "Didziausias bendras daliklis tarp skaiciu " << skaicius1 << "ir " << skaicius2 << "yra " << daliklis << endl;
+            break;
             case 3:
                 zaidimas();
-                break;
+            break;
             case 4:
                 int n;
-                cout << "Iveskite teigiama sveikaji skaiciu" << endl;
-                cin >> n;
+            cout << "Iveskite teigiama sveikaji skaiciu" << endl;
+            cin >> n;
 
-                if (n>0) {
-                    fizzbuzz(n);
-                } else {
-                    cout << "Iveskite teigiama sveikaji skaiciu" << endl;
-                }
-                break;
+            if (n>0) {
+                fizzbuzz(n);
+            } else {
+                cout << "Iveskite teigiama sveikaji skaiciu" << endl;
+            }
+            break;
             default:
                 cout << "Tokio pasirinkimo nera" << endl;
+        }
     }
-    return 0;
+        return 0;
 }
