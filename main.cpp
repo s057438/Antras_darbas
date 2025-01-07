@@ -35,20 +35,18 @@ void zaidimas() {
 
     cout << "Atspekite skaiciu nuo 1 iki 100" << endl;
 
-    while(true) {
+    while(spejimas != atsitiktinis) {
         cout << "Iveskite savo spejima" << endl;
         cin >> spejimas;
 
         if (spejimas > atsitiktinis) {
             cout << "Jusu ivestas skaicius yra per didelis." << endl;
-        }
-        else if (spejimas < atsitiktinis) {
+        } else if (spejimas < atsitiktinis) {
             cout << "Jusu ivestas skaicius yra per mazas" << endl;
-        }
-        else {
+        } else if (spejimas == atsitiktinis) {
             cout << "Jus atspejote skaiciu" << endl;
         }
-        break;
+        continue;
     }
 }
 // Fizzbuzz
@@ -78,44 +76,47 @@ int main() {
         cout << "5. Iseiti is programos" << endl;
         cin >> veiksmas;
         switch (veiksmas) {
-            case 1:
+            case 1: {
                 char raide;
-            cout << "Iveskite raide, kuria norite patikrinti" << endl;
-            cin >> raide;
+                cout << "Iveskite raide, kuria norite patikrinti" << endl;
+                cin >> raide;
 
-            if (balse(raide)) {
-                cout << "True" << endl;
-            } else {
-                cout << "False" << endl;
+                if (balse(raide)) {
+                    cout << "True" << endl;
+                } else {
+                    cout << "False" << endl;
+                }
+                break;
             }
-            break;
-            case 2:
+            case 2: {
                 int skaicius1, skaicius2;
-            cout << "Iveskite pirma skaiciu:" << endl;
-            cin >> skaicius1;
+                cout << "Iveskite pirma skaiciu:" << endl;
+                cin >> skaicius1;
 
-            cout << "Iveskite antra skaiciu:" << endl;
-            cin >> skaicius2;
+                cout << "Iveskite antra skaiciu:" << endl;
+                cin >> skaicius2;
 
-            int daliklis = didziausias(skaicius1, skaicius2 );
-            cout << "Didziausias bendras daliklis tarp skaiciu " << skaicius1 << "ir " << skaicius2 << "yra " << daliklis << endl;
-            break;
+                int daliklis = didziausias(skaicius1, skaicius2 );
+                cout << "Didziausias bendras daliklis tarp skaiciu " << skaicius1 << " " << "ir " << skaicius2 << " " << "yra " << daliklis << endl;
+                break;
+            }
             case 3:
                 zaidimas();
             break;
-            case 4:
+            case 4: {
                 int n;
-            cout << "Iveskite teigiama sveikaji skaiciu" << endl;
-            cin >> n;
-
-            if (n>0) {
-                fizzbuzz(n);
-            } else {
                 cout << "Iveskite teigiama sveikaji skaiciu" << endl;
+                cin >> n;
+
+                if (n>0) {
+                    fizzbuzz(n);
+                } else {
+                    cout << "Iveskite teigiama sveikaji skaiciu" << endl;
+                }
+                break;
             }
-            break;
             default:
-                cout << "Tokio pasirinkimo nera" << endl;
+                cout << "Jus sekmingai isejote is programos" << endl;
         }
     }
         return 0;
